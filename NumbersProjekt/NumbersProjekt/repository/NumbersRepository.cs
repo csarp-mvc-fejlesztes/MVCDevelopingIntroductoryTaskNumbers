@@ -26,5 +26,34 @@ namespace NumbersProjekt.repository
         {
             return numbers;
         }
+
+        /// <summary>
+        /// Szám hozzáadása a listához
+        /// </summary>
+        /// <param name="number">A szám</param>
+        public void add(double number)
+        {
+            numbers.Add(number);
+        }
+
+        /// <summary>
+        /// Adott sorszámú elem törlése a listában
+        /// </summary>
+        /// <param name="index">A sorszám</param>
+        public void remove(int index)
+        {
+            numbers.RemoveAt(index);
+        }
+
+        /// <summary>
+        /// Adott sorszámú elem módosítása adott számra
+        /// </summary>
+        /// <param name="index">A sorszám</param>
+        /// <param name="toNumber">Erre a számra módosul</param>
+        public void modify(int index, double toNumber)
+        {
+            numbers[index] = toNumber;
+        }
+
     }
 }
