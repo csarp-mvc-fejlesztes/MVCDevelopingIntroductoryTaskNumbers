@@ -76,10 +76,22 @@ namespace NumbersProjekt.repository
         /// Számok átlaga
         /// </summary>
         /// <returns>A számok átlaga</returns>
+        /// <exception cref="RepositoryException">A számok átlaga nem számolható</exception>
         public double getAverage()
         {
-            double average = numbers.Average();
-            return average;
+            try
+            {
+                double average = numbers.Average();
+                return average;
+            }
+            catch (ArgumentNullException ane)
+            {
+                throw new RepositoryException("Számok átlaga nem számolható.\n" + ane.Message);
+            }
+            catch (InvalidOperationException ioe)
+            {
+                throw new RepositoryException("Számok átlaga nem számolható.\n" + ioe.Message);
+            }
         }
     }
 }
