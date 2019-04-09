@@ -23,5 +23,22 @@ namespace NumbersProjekt.controller
         {
             nr = new NumbersRepository();
         }
+
+        /// <summary>
+        /// Output átalakítás:
+        ///  - eröltetett példa, a számok listájából stringek listáját készíti el
+        ///  - bemutatja a példa az output szánt átalakítást
+        /// </summary>
+        /// <returns>Számok listája</returns>
+        public List<string> getNumbers()
+        {
+            List<double> numbers = nr.getNumbers();
+            List<string> numbersString = new List<string>();
+            foreach (double number in numbers)
+            {
+                numbersString.Add(number.ToString());
+            }
+            return numbersString;
+        }
     }
 }
