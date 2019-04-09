@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using NumbersProjekt.repository;
+
 namespace NumbersProjekt.controller
 {
     /// <summary>
@@ -15,5 +17,11 @@ namespace NumbersProjekt.controller
     /// </summary>
     class NumbersController
     {
+        private NumbersRepository nr;
+
+        public NumbersController()
+        {
+            nr = new NumbersRepository();
+        }
     }
 }
