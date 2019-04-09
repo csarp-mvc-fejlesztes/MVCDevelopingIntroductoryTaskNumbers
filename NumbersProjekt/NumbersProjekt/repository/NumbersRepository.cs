@@ -40,9 +40,17 @@ namespace NumbersProjekt.repository
         /// Adott sorszámú elem törlése a listában
         /// </summary>
         /// <param name="index">A sorszám</param>
+        /// <exception cref="RepositoryException">Adott sorszámú elem nem létezik a listában</exception>
         public void remove(int index)
         {
-            numbers.RemoveAt(index);
+            try
+            {
+                numbers.RemoveAt(index);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                throw new RepositoryException(index + " sorszámú elem nem törölhető.\n" + e.Message);
+            }
         }
 
         /// <summary>
@@ -50,9 +58,18 @@ namespace NumbersProjekt.repository
         /// </summary>
         /// <param name="index">A sorszám</param>
         /// <param name="toNumber">Erre a számra módosul</param>
+        /// <exception cref="RepositoryException">Adott sorszámú elem nem létezik a listában</exception>
         public void modify(int index, double toNumber)
         {
-            numbers[index] = toNumber;
+
+            try
+            {
+                numbers[index] = toNumber;
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                throw new RepositoryException(index + " sorszámú elem nem törölhető\n" + e.Message);
+            }
         }
 
     }
