@@ -16,7 +16,7 @@ namespace NumbersProjekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NumbersForm());
+            Application.Run(new Form1());
         }
     }
 }
