@@ -72,5 +72,14 @@ namespace NumbersProjekt.repository
             }
         }
 
+        /// <summary>
+        /// Számok átlaga
+        /// </summary>
+        /// <returns>A számok átlaga</returns>
+        public double getAverage()
+        {
+            double average = numbers.Average();
+            return average;
+        }
     }
 }
