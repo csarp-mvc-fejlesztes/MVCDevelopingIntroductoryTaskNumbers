@@ -85,7 +85,7 @@
             this.buttonModify.Size = new System.Drawing.Size(75, 23);
             this.buttonModify.TabIndex = 3;
             this.buttonModify.Text = "Módosítás";
-            this.buttonModify.UseVisualStyleBackColor = true;            
+            this.buttonModify.UseVisualStyleBackColor = true;
             // 
             // buttonDelete
             // 
@@ -111,7 +111,7 @@
             this.buttonCompute.Size = new System.Drawing.Size(75, 23);
             this.buttonCompute.TabIndex = 6;
             this.buttonCompute.Text = "Kiszámol";
-            this.buttonCompute.UseVisualStyleBackColor = true;            
+            this.buttonCompute.UseVisualStyleBackColor = true;
             // 
             // labelAverage
             // 
@@ -178,7 +178,7 @@
             // 
             this.errorProviderNumber.ContainerControl = this;
             // 
-            // Form1
+            // NumbersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,8 +189,8 @@
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.labelNumber);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "NumbersForm";
+            this.Text = "Számok kezelése és műveletek";
             this.panelNumber.ResumeLayout(false);
             this.panelCompute.ResumeLayout(false);
             this.panelCompute.PerformLayout();
