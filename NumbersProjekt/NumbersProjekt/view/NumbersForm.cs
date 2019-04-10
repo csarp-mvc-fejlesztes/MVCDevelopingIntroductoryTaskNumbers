@@ -38,6 +38,10 @@ namespace NumbersProjekt
             {
                 Debug.WriteLine(ex.Message);
             }
+            if (listBoxNumber.Items.Count > 0)
+                felfedPaneleket();
+            else
+                eltakarPaneleket();
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -57,6 +61,10 @@ namespace NumbersProjekt
             {
                 Debug.WriteLine(ex.Message);
             }
+            if (listBoxNumber.Items.Count > 0)
+                felfedPaneleket();
+            else
+                eltakarPaneleket();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -113,6 +121,12 @@ namespace NumbersProjekt
             panelCompute.Visible = false;
             panelNumber.Visible = false;
             textBoxNumber.Focus();
+        }
+
+        private void felfedPaneleket()
+        {
+            panelCompute.Visible = true;
+            panelNumber.Visible = true;
         }
     }
 }
