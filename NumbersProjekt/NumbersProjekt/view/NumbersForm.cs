@@ -97,7 +97,10 @@ namespace NumbersProjekt
 
         private void textBoxNumber_TextChanged(object sender, EventArgs e)
         {
-
+            errorProviderAdd.Clear();
+            errorProviderDelete.Clear();
+            errorProviderModify.Clear();
+            errorProviderNumber.Clear();
         }
 
         private void NumbersForm_Load(object sender, EventArgs e)
