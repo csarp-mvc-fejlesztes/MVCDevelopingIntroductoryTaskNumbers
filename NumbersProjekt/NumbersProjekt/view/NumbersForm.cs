@@ -38,6 +38,10 @@ namespace NumbersProjekt
             {
                 Debug.WriteLine(ex.Message);
             }
+            if (listBoxNumber.Items.Count > 0)
+                felfedPaneleket();
+            else
+                eltakarPaneleket();
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -57,6 +61,10 @@ namespace NumbersProjekt
             {
                 Debug.WriteLine(ex.Message);
             }
+            if (listBoxNumber.Items.Count > 0)
+                felfedPaneleket();
+            else
+                eltakarPaneleket();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -84,6 +92,41 @@ namespace NumbersProjekt
         {
             //computeAverage() nem dob kivételt
             textBoxAverage.Text = nc.computeAverage();
+        }
+
+        private void listBoxNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //a listBox-ban kiválasztot elem legyen a TextBox-ban is
+            int index = listBoxNumber.SelectedIndex;
+            if (index < 0)
+                return;
+            textBoxNumber.Text = listBoxNumber.SelectedItem.ToString();
+        }
+
+        private void textBoxNumber_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderAdd.Clear();
+            errorProviderDelete.Clear();
+            errorProviderModify.Clear();
+            errorProviderNumber.Clear();
+        }
+
+        private void NumbersForm_Load(object sender, EventArgs e)
+        {
+            eltakarPaneleket();
+        }
+
+        private void eltakarPaneleket()
+        {
+            panelCompute.Visible = false;
+            panelNumber.Visible = false;
+            textBoxNumber.Focus();
+        }
+
+        private void felfedPaneleket()
+        {
+            panelCompute.Visible = true;
+            panelNumber.Visible = true;
         }
     }
 }
