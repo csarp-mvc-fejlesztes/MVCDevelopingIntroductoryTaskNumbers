@@ -1,18 +1,89 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using NumbersProjekt.controller;
+using System.Diagnostics;
+
 namespace NumbersProjekt
 {
     public partial class NumbersForm : Form
     {
+        private NumbersController nc;
+
         public NumbersForm()
         {
+            nc = new NumbersController();
             InitializeComponent();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }     
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                nc.addNumber(textBoxNumber.Text);
+                listBoxNumber.DataSource = nc.getNumbers();
+                textBoxNumber.Text = string.Empty;
+                textBoxNumber.Focus();
+            }
+            catch (ControllerException ce)
+            {
+                errorProviderAdd.SetError(buttonAdd, ce.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            int index = listBoxNumber.SelectedIndex;
+            try
+            {
+                nc.modifyNumber(index, textBoxNumber.Text);
+                listBoxNumber.DataSource = null;
+                listBoxNumber.DataSource = nc.getNumbers();
+            }
+            catch (ControllerException ce)
+            {
+                errorProviderAdd.SetError(buttonModify, ce.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int index = listBoxNumber.SelectedIndex;
+            try
+            {
+                nc.deleteNumber(index);
+                listBoxNumber.DataSource = null;
+                listBoxNumber.DataSource = nc.getNumbers();
+                if (listBoxNumber.Items.Count == 0)
+                    textBoxNumber.Text = string.Empty;
+            }
+            catch (ControllerException ce)
+            {
+                errorProviderAdd.SetError(buttonDelete, ce.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void buttonCompute_Click(object sender, EventArgs e)
+        {
+            //computeAverage() nem dob kivételt
+            textBoxAverage.Text = nc.computeAverage();
+        }
     }
 }
