@@ -85,5 +85,14 @@ namespace NumbersProjekt
             //computeAverage() nem dob kivételt
             textBoxAverage.Text = nc.computeAverage();
         }
+
+        private void listBoxNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //a listBox-ban kiválasztot elem legyen a TextBox-ban is
+            int index = listBoxNumber.SelectedIndex;
+            if (index < 0)
+                return;
+            textBoxNumber.Text = listBoxNumber.SelectedItem.ToString();
+        }
     }
 }

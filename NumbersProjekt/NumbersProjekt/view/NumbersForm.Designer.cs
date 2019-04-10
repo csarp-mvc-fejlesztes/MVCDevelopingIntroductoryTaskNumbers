@@ -106,6 +106,7 @@
             this.listBoxNumber.Name = "listBoxNumber";
             this.listBoxNumber.Size = new System.Drawing.Size(113, 303);
             this.listBoxNumber.TabIndex = 5;
+            this.listBoxNumber.SelectedIndexChanged += new System.EventHandler(this.listBoxNumber_SelectedIndexChanged);
             // 
             // buttonCompute
             // 
