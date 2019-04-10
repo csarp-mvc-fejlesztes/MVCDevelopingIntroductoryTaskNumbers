@@ -22,22 +22,30 @@ namespace NumbersProjekt
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            nc.addNumber(textBoxNumber.Text);
+            listBoxNumber.DataSource = nc.getNumbers();
+            textBoxNumber.Text = string.Empty;
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxNumber.SelectedIndex;
+            nc.modifyNumber(index, textBoxNumber.Text);
+            listBoxNumber.DataSource = null;
+            listBoxNumber.DataSource = nc.getNumbers();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxNumber.SelectedIndex;
+            nc.deleteNumber(index);
+            listBoxNumber.DataSource = null;
+            listBoxNumber.DataSource = nc.getNumbers();
         }
 
         private void buttonCompute_Click(object sender, EventArgs e)
         {
-
+            textBoxAverage.Text = nc.computeAverage();
         }
     }
 }
