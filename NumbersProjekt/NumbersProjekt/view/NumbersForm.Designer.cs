@@ -68,6 +68,7 @@
             this.textBoxNumber.Name = "textBoxNumber";
             this.textBoxNumber.Size = new System.Drawing.Size(154, 20);
             this.textBoxNumber.TabIndex = 1;
+            this.textBoxNumber.TextChanged += new System.EventHandler(this.textBoxNumber_TextChanged);
             // 
             // buttonAdd
             // 
@@ -196,6 +197,7 @@
             this.Controls.Add(this.labelNumber);
             this.Name = "NumbersForm";
             this.Text = "Számok kezelése és műveletek";
+            this.Load += new System.EventHandler(this.NumbersForm_Load);
             this.panelNumber.ResumeLayout(false);
             this.panelCompute.ResumeLayout(false);
             this.panelCompute.PerformLayout();

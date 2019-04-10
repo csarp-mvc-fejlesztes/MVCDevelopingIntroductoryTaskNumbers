@@ -94,5 +94,15 @@ namespace NumbersProjekt
                 return;
             textBoxNumber.Text = listBoxNumber.SelectedItem.ToString();
         }
+
+        private void textBoxNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumbersForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
