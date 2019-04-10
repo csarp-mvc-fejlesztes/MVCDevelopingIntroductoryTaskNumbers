@@ -124,5 +124,24 @@ namespace NumbersProjekt.controller
                 Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
             }
         }
+
+        public string computeAverage()
+        {
+            try
+            {
+                double numbersAvg = nr.getAverage();
+                double roundednumber = Math.Round(numbersAvg, 2);
+                return roundednumber.ToString();
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine(re.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
+            return "";
+        }
     }
 }
