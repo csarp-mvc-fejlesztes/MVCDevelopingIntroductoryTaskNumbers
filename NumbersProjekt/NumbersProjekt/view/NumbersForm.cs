@@ -105,7 +105,14 @@ namespace NumbersProjekt
 
         private void NumbersForm_Load(object sender, EventArgs e)
         {
+            eltakarPaneleket();
+        }
 
+        private void eltakarPaneleket()
+        {
+            panelCompute.Visible = false;
+            panelNumber.Visible = false;
+            textBoxNumber.Focus();
         }
     }
 }
