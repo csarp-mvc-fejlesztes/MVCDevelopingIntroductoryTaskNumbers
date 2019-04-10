@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using NumbersProjekt.repository;
+using System.Diagnostics;
 
 namespace NumbersProjekt.controller
 {
@@ -49,8 +50,27 @@ namespace NumbersProjekt.controller
         public void addNumber(string numberText)
         {
             double number = 0;
-            number = Convert.ToDouble(numberText);
-            nr.add(number);
+            try
+            {
+                number = Convert.ToDouble(numberText);
+                nr.add(number);
+            }
+            catch (FormatException fe)
+            {
+                // ControllerException-t el kell készíteni!
+                // Controller Exceptionok megjelennek a view ErrorProviderben
+                throw new ControllerException(numberText + " szám nem megfelelő formátumú...");
+            }
+            catch (OverflowException oe)
+            {
+                throw new ControllerException(numberText + " szám túl nagy vagy túl kicsi");
+            }
+            catch (Exception ex)
+            {
+                // A repository hibákat csak loggoljuk, most az outputra
+                // using System.Diagnostics; szükséges hozzá
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -67,7 +87,7 @@ namespace NumbersProjekt.controller
         }
 
         /// <summary>
-        /// Indexedit elem törlése a repository segítségével
+        /// Indexedik elem törlése a repository segítségével
         /// </summary>
         /// <param name="index">Annak az elemnek a sorszáma a melyet törölni kell</param>
         public void deleteNumber(int index)
