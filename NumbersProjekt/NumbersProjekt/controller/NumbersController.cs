@@ -82,8 +82,27 @@ namespace NumbersProjekt.controller
         public void modifyNumber(int index, string numberText)
         {
             double number = 0;
-            number = Convert.ToDouble(numberText);
-            nr.modify(index, number);
+            try
+            {
+                number = Convert.ToDouble(numberText);
+                nr.modify(index, number);
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine(re.Message);
+            }
+            catch (FormatException fe)
+            {
+                throw new ControllerException(numberText + " szám nem megfelelő formátumú...");
+            }
+            catch (OverflowException oe)
+            {
+                throw new ControllerException(numberText + " szám túl nagy vagy túl kicsi");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -92,7 +111,18 @@ namespace NumbersProjekt.controller
         /// <param name="index">Annak az elemnek a sorszáma a melyet törölni kell</param>
         public void deleteNumber(int index)
         {
-            nr.remove(index);
+            try
+            {
+                nr.remove(index);
+            }
+            catch (RepositoryException re)
+            {
+                Debug.WriteLine(re.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Ismeretlen hiba történt...\n" + ex.Message);
+            }
         }
     }
 }
