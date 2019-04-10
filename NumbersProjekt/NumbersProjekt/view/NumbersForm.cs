@@ -18,6 +18,26 @@ namespace NumbersProjekt
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }     
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCompute_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

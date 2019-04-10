@@ -77,6 +77,7 @@
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Hozzáadás";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonModify
             // 
@@ -86,6 +87,7 @@
             this.buttonModify.TabIndex = 3;
             this.buttonModify.Text = "Módosítás";
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonDelete
             // 
@@ -95,6 +97,7 @@
             this.buttonDelete.TabIndex = 4;
             this.buttonDelete.Text = "Törlés";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // listBoxNumber
             // 
@@ -112,6 +115,7 @@
             this.buttonCompute.TabIndex = 6;
             this.buttonCompute.Text = "Kiszámol";
             this.buttonCompute.UseVisualStyleBackColor = true;
+            this.buttonCompute.Click += new System.EventHandler(this.buttonCompute_Click);
             // 
             // labelAverage
             // 
