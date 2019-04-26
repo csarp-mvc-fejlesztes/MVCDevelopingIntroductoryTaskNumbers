@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCBevezetoListString", "MVCBevezetoListString\MVCBevezetoListString.csproj", "{0945DBE5-12DF-4551-800C-592267B6E5DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCBevezetoListString", "MVCBevezetoListString\MVCBevezetoListString.csproj", "{E95C5E3F-3AC0-4B1C-92AB-54DFC91A1206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0945DBE5-12DF-4551-800C-592267B6E5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0945DBE5-12DF-4551-800C-592267B6E5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0945DBE5-12DF-4551-800C-592267B6E5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0945DBE5-12DF-4551-800C-592267B6E5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E95C5E3F-3AC0-4B1C-92AB-54DFC91A1206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95C5E3F-3AC0-4B1C-92AB-54DFC91A1206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95C5E3F-3AC0-4B1C-92AB-54DFC91A1206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95C5E3F-3AC0-4B1C-92AB-54DFC91A1206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BDEDFC51-93D7-4CC9-9966-93F93B327A44}
+		SolutionGuid = {2038F421-0BCD-4C32-9E5C-B672960E30E2}
 	EndGlobalSection
 EndGlobal
