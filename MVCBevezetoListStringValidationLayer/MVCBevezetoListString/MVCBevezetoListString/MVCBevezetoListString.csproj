@@ -46,9 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\ControllerStudentID.cs" />
-    <Compile Include="repository\RepositoryStudentID.cs" />
-    <Compile Include="validation\StudentIdValidation.cs" />
-    <Compile Include="validation\StudentIdValidationException.cs" />
     <Compile Include="view\FormStudentID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +76,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="repository\" />
+    <Folder Include="validation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
