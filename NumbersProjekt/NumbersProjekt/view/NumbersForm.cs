@@ -76,7 +76,11 @@ namespace NumbersProjekt
                 listBoxNumber.DataSource = null;
                 listBoxNumber.DataSource = nc.getNumbers();
                 if (listBoxNumber.Items.Count == 0)
+                {
                     textBoxNumber.Text = string.Empty;
+                    eltakarPaneleket();
+                }
+                    
             }
             catch (ControllerException ce)
             {
